@@ -1,16 +1,16 @@
 {
   "name": "bun-express",
-  "module": "index.ts",
-  "type": "module",
+  "version": "0.0.0",
   "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+  "scripts": {
+    "start": "node ./bin/www"
   },
   "dependencies": {
-    "@types/express": "^5.0.3",
-    "express": "^5.1.0"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
   }
 }
