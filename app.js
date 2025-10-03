@@ -1,3 +1,5 @@
+
+const helmet = require("helmet");
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -12,7 +14,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
+app.disable('x-powered-by');
+app.use(helmet());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -34,7 +37,7 @@ app.use(function(err, req, res, next) {
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
   // render the error page
-  res.status(err.status || 500);
+  res.status(err.status || 500)
   res.render('error');
 });
 
