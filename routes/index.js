@@ -10,4 +10,11 @@ router.get('/', function(req, res, next) {
   // res.render('index', { title: 'Express' });
 });
 
+router.post('/', function(req, res, next) {
+  const name = req.body.name || 'World';
+  res.status(201).send({
+    message: `Hello, ${name}!`
+  });
+});
+
 module.exports = router;
